@@ -13,6 +13,7 @@ import {
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
+import axios from 'react-native-axios';
 
 export default class ProfileScreen extends React.Component {
   static navigationOptions = {
@@ -49,6 +50,22 @@ export default class ProfileScreen extends React.Component {
         },
       ])
     }
+    this.getUserInformation = this.getUserInformation.bind(this);
+  }
+
+  componentDidMount() {
+    this.getUserInformation();
+
+  }
+
+  getUserInformation() {
+    axios.get('/users/:id')
+    .then(function (res) {
+      console.log(res);
+    })
+    .catch(function(err) {
+      console.log(err)
+    })
   }
 
 
