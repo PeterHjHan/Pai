@@ -1,6 +1,9 @@
 {
-  "expoServerPort": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerPort": 19000,
+  "expoServerNgrokUrl": "https://tg-swu.anonymous.pai.exp.direct",
+  "packagerNgrokUrl": "https://packager.tg-swu.anonymous.pai.exp.direct",
+  "ngrokPid": 94855,
+  "devToolsPort": 19002,
+  "packagerPort": 19001,
+  "packagerPid": 94828
 }
