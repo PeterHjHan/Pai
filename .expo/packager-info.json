@@ -1,6 +1,9 @@
 {
-  "expoServerPort": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 94436,
+  "expoServerNgrokUrl": "https://gu-u24.anonymous.pai.exp.direct",
+  "packagerNgrokUrl": "https://packager.gu-u24.anonymous.pai.exp.direct",
+  "ngrokPid": 94464
 }
