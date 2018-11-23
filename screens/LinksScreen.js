@@ -8,7 +8,14 @@ const {ipv4} = require('../config.json');
 import moment from 'moment';
 
 
+
+console.log(userConnections);
+
 function CardOpen(props) {
+
+  var userConnections = axios.get(`${ipv4}/user/${this.props.screenProps.currentUserId}/connections`).then((result) => {
+    return result;
+  })
   let nuggets = props.person.nuggets;
 
     return (
@@ -101,7 +108,6 @@ export default class LinksScreen extends React.Component {
   }
 
   componentDidMount() {
-
 
     axios.get(`${ipv4}/user/${this.props.screenProps.currentUserId}/connections`)
     .then((res) => {
