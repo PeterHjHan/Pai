@@ -7,6 +7,7 @@ Pai is a React Native Mobile App that allows one user to randomly connect to oth
 ## Demo
 
 ![](/assets/images/pai_demo.gif | width=400)
+<img src="/assets/images/pai_demo.gif" width="400">
 
 
 ## Getting Started
