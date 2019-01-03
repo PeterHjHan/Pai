@@ -195,7 +195,7 @@ export default class TrackScreen extends React.Component {
   }
 
   componentWillUnmount() {
-    setTimeout(()=> {})
+  
     clearInterval(this.timer)
     //this removes the setState error orange yellow BUT, causes issues with 
   }

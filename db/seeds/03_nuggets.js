@@ -27,7 +27,7 @@ exports.seed = function(knex, Promise) {
         {id: 17, user_id: 5, question_id: 1, answer: 'Too Many Places'},
         {id: 18, user_id: 5, question_id: 4, answer: 'NOTHING'},
 
-        {id: 19, user_id: 6, question_id: 9, answer: 'Both'},
+        {id: 19, user_id: 6, question_id: 9, answer: 'I can lip-read!'},
 
         {id: 20, user_id: 7, question_id: 6, answer: 'Teleportation'},
         {id: 21, user_id: 7, question_id: 7, answer: 'Microsoft, Teaching, Databases'},

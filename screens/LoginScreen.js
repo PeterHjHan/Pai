@@ -15,11 +15,6 @@ export default class LoginScreen extends React.Component {
 
   }
 
-  // onPress(event){
-  //   console.log("ouch");
-  //   console.log(this.props.navigation)
-  //   this.props.navigation.navigate('Profile');
-  // }
   render() {
 
     return (
@@ -38,26 +33,25 @@ export default class LoginScreen extends React.Component {
         </TouchableOpacity>
         <View style={styles.switch}>
             <Button
+            onPress={this.props.screenProps.changeToUserTwo}
+            title="Brennan"
+            color="blue"
+            />
+            <Button
             onPress={this.props.screenProps.changeToUserOne}
             title="User 1"
             color="blue"
             />
 
             <Button
-            onPress={this.props.screenProps.changeToUserTwo}
-              title="User 2"
+            onPress={this.props.screenProps.changeToUserFour}
+            title="User 4"
             color="blue"
             />
 
             <Button
             onPress={this.props.screenProps.changeToUserThree}
-            title="User 3"
-            color="blue"
-            />
-
-            <Button
-            onPress={this.props.screenProps.changeToUserFour}
-            title="User 4"
+            title="Gaurav"
             color="blue"
             />
         </View>

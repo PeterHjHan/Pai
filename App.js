@@ -21,7 +21,7 @@ export default class App extends React.Component {
     //List view is depracated look into doing something different here
     this.state = {
       user: null,
-      currentUserId: 1,
+      currentUserId: 4,
       profileImage: " ",
       nuggets: [],
       lat: 0,
@@ -35,7 +35,7 @@ export default class App extends React.Component {
     this.lat_kalman = new KalmanFilter({ R: 0.01, Q: 65 });
     this.lng_kalman = new KalmanFilter({ R: 0.01, Q: 65 });
 
-    this.socket = new WebSocket("ws://192.168.88.19:3001");
+    this.socket = new WebSocket("ws://192.168.1.65:3001");
     this.getProfileInformation     = this.getProfileInformation.bind(this);
     this.sendLocationToServer      = this.sendLocationToServer.bind(this);
     this._getLocationAsync         = this._getLocationAsync.bind(this);

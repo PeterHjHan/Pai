@@ -195,7 +195,7 @@ class Card extends React.Component {
         </View>
 
             {
-            this.state.open ? <CardOpen friendsNum={this.props.screenProps.friends} deleteConnection={this.props.deleteConnection} person={ user } /> : null
+            this.state.open ? <CardOpen friendsNum={this.props.user.number_of_friends} deleteConnection={this.props.deleteConnection} person={ user } /> : null
             }
             <Text style={styles.expiry}> Expiring {daysRemaining} </Text>
           </View>
@@ -304,8 +304,8 @@ export default class LinksScreen extends React.Component {
                 isCloseColor = "#e54b4b"
                 middleCloseColor = "#e0a3f7"
                 farAwayColor = "#4b64e5"
-                closestDistance = '5'
-                middleDistance = '10'
+                closestDistance = '50'
+                middleDistance = '505'
 
                 />
               )}
