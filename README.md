@@ -7,7 +7,7 @@ Pai is a React Native Mobile App that allows one user to randomly connect to oth
 1. Clone this repo
 2. Run `npm install`
 3. Add the following code in `node_modules/react-native-pulse/pulse.js` before `componentDidMount()`
-  * ```js
+  ```js
   componentWillReceiveProps(props) {
         if(props.color != this.state.color){
             this.setState({
@@ -15,6 +15,7 @@ Pai is a React Native Mobile App that allows one user to randomly connect to oth
             })
         }
     }
+  ```
 4. Run `knex migrate:latest`
 5. Run `knex seed:run`
 6. Create a `config.json` in the root folder and write the following
@@ -22,7 +23,7 @@ Pai is a React Native Mobile App that allows one user to randomly connect to oth
     {
       ipv4: `your ip address (example: 192.123.456.20:)`
     }
-    'do NOT add the last . at the end, but put a colon'
+    do NOT add the last . at the end, but put a colon
   ```
 7. Run the server `node server.js`
 8. Run the web-socket `node ws-server.js`
