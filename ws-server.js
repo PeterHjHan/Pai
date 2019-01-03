@@ -2,7 +2,8 @@ const express = require('express');
 const SocketServer = require('ws').Server
 const uuid = require('uuid-js');
 const axios = require('axios');
-const {ipv4} = require ('./config.json');
+const serverAddress = require ('./config.json');
+const {ipv4} = serverAddress+'8080'
 const haversine = require('haversine');
 
 

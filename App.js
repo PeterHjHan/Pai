@@ -6,6 +6,8 @@ import axios from 'react-native-axios';
 import {ipv4} from './config.json';
 import KalmanFilter from 'kalmanjs';
 
+const serverAddress = `${ipv4}8080`
+
 console.disableYellowBox = true;
 //this does not allow the yellow stack warning to show;
 
@@ -35,7 +37,8 @@ export default class App extends React.Component {
     this.lat_kalman = new KalmanFilter({ R: 0.01, Q: 65 });
     this.lng_kalman = new KalmanFilter({ R: 0.01, Q: 65 });
 
-    this.socket = new WebSocket("ws://192.168.1.65:3001");
+    this.socket = new WebSocket(`${ipv4}3001`);
+
     this.getProfileInformation     = this.getProfileInformation.bind(this);
     this.sendLocationToServer      = this.sendLocationToServer.bind(this);
     this._getLocationAsync         = this._getLocationAsync.bind(this);
@@ -104,7 +107,7 @@ export default class App extends React.Component {
   }
 
   getProfileInformation() {
-    axios.get(`${ipv4}/user/${this.state.currentUserId}`)
+    axios.get(`${serverAddress}/user/${this.state.currentUserId}`)
     .then((response)=> {
       const data = response.data
       this.setState({
@@ -119,7 +122,7 @@ export default class App extends React.Component {
   findConnection() {
     axios({
       method: 'post',
-      url: `${ipv4}/user/${this.state.currentUserId}/connections/new`,
+      url: `${serverAddress}/user/${this.state.currentUserId}/connections/new`,
       data: {
         userId: this.state.currentUserId,
       }

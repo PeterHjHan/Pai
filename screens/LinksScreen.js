@@ -2,7 +2,9 @@ import React from 'react';
 import app from '../styles/container.js';
 import axios from 'react-native-axios';
 import { AlertIOS, ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, ImageBackground } from 'react-native';
+
 const {ipv4} = require('../config.json');
+const serverAddress = `${ipv4}8080`
 import { Badge, Icon } from 'react-native-elements';
 import moment from 'moment';
 
@@ -224,7 +226,7 @@ export default class LinksScreen extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${ipv4}/user/${this.props.screenProps.currentUserId}/connections`)
+    axios.get(`${serverAddress}/user/${this.props.screenProps.currentUserId}/connections`)
     .then((res) => {
       this.setState({ userConnections: res.data , currentUserId: this.props.screenProps.currentUserId})
     })
@@ -234,7 +236,7 @@ export default class LinksScreen extends React.Component {
   deleteConnection(conn_id) {
     axios({
       method: 'post',
-      url: `${ipv4}/connections/${conn_id}/delete`,
+      url: `${serverAddress}/connections/${conn_id}/delete`,
       data: {
         userId: this.state.currentUserId,
         currentConnectionId: conn_id,
@@ -249,7 +251,7 @@ export default class LinksScreen extends React.Component {
   addConnection(){
     axios({
       method: 'post',
-      url: `${ipv4}/user/${this.props.screenProps.currentUserId}/connections/new`,
+      url: `${serverAddress}/user/${this.props.screenProps.currentUserId}/connections/new`,
     })
     .then((res) => {
       this.setState({userConnections: res.data}, this.getConnections);
