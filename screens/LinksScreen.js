@@ -260,7 +260,7 @@ export default class LinksScreen extends React.Component {
   }
 
   getConnections() {
-    axios.get(`${ipv4}/user/${this.props.screenProps.currentUserId}/connections`)
+    axios.get(`${serverAddress}/user/${this.props.screenProps.currentUserId}/connections`)
     .then((res) => {
       this.setState({ userConnections: res.data , currentUserId: this.props.screenProps.currentUserId})
     })

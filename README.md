@@ -1,6 +1,10 @@
-# Project Description
+# Pai
+
+## Description
 
 Pai is a React Native Mobile App that allows one user to randomly connect to other users to make a friendship by scanning each users indivdiual QRcode. It uses the device's geolocation to calculate the difference of the distance and provide a color based indicator. There is no map to track each users.
+
+## Demo
 
 ## Getting Started
 

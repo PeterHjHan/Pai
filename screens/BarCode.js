@@ -3,6 +3,7 @@ import { AlertIOS, Text, StyleSheet, View, TouchableOpacity} from 'react-native'
 import { BarCodeScanner, Permissions } from 'expo';
 import axios from 'react-native-axios';
 const {ipv4} = require('../config.json');
+const serverAddress = `${ipv4}8080`
 // import DropdownAlert from 'react-native-dropdownalert';
 
 // import FlashMessage from "react-native-flash-message";
@@ -32,7 +33,7 @@ export default class Barcode extends React.Component {
   handleBarCodeScanned (conn_id) {
     axios({
       method: 'post',
-      url: `${ipv4}/connections/${conn_id}/friends`,
+      url: `${serverAddress}/connections/${conn_id}/friends`,
       data: {
         userId: this.props.userId,
       }

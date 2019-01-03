@@ -2,8 +2,8 @@ const express = require('express');
 const SocketServer = require('ws').Server
 const uuid = require('uuid-js');
 const axios = require('axios');
-const serverAddress = require ('./config.json');
-const {ipv4} = serverAddress+'8080'
+const {ipv4} = require ('./config.json')
+const serverAddress = `${ipv4}8080`
 const haversine = require('haversine');
 
 
@@ -14,11 +14,6 @@ const server = express()
 
 const wss = new SocketServer({port: PORT});
 
-
-
-function test(connectedUser){
-  return axios.get(`${ipv4}/user/${connectedUser.id}/location/`)
-}
 
 wss.on('connection', (ws) => {
   console.log(`${uuid.create().toString()} Connection Opened`);
@@ -37,7 +32,7 @@ wss.on('connection', (ws) => {
 
     axios({
       method: 'post',
-      url: `${ipv4}/user/${user}/location/`,
+      url: `${serverAddress}/user/${user}/location/`,
       data: {
         user: user,
         longitude: longitude,
@@ -49,12 +44,12 @@ wss.on('connection', (ws) => {
       console.log(err.message);
     })
 
-    axios.get(`${ipv4}/user/${user}/connections`)
+    axios.get(`${serverAddress}/user/${user}/connections`)
     .then((res) => {
       var allCalls = [];
       var mergedData = [] 
       res.data.forEach((connectedUser) => {
-        allCalls.push(axios.get(`${ipv4}/user/${connectedUser.id}/location/`));
+        allCalls.push(axios.get(`${serverAddress}/user/${connectedUser.id}/location/`));
       })
 
       Promise.all([...allCalls]).then(function(values) {
